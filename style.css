@@ -5,6 +5,18 @@
     --purple: #382f93;
   }
 
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--purple);
+}
+
 @font-face {
     font-family: Britanic;
     src: url(BRITANIC.TTF);
@@ -41,6 +53,7 @@ header {
     letter-spacing: 0.1rem;
     margin: 0 0 1rem 0;
     color: var(--pink);
+    cursor: pointer;
 }
 #future-employee img{
     position: absolute;
@@ -88,13 +101,7 @@ header {
     top: 75%;
     left: 59%;
 }
-#line {
-    position: absolute;
-    height: 0.5rem;
-    width: 95%;
-    background-color: #000000;
-    margin: 0 0 0.5rem 0;
-}
+
 main {
     display: flex;
     width: 99%;
@@ -129,6 +136,9 @@ main {
 }
 #education {
     width: 80%;
+}
+.education-info {
+    width: 85%;
 }
 #hobbies {
     width: 20%;
@@ -230,7 +240,44 @@ main {
     padding: 0.1rem 0.5rem;
     width: max-content;
 }
+#blinking-text {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+#arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.girl,
+.girl.back {
+  transition: transform 0.2s ease-out;
+}
+
+.sparkling-generated {
+    position: absolute;
+    width: 3%;
+    pointer-events: none;
+    animation: sparkleFade 2s forwards;
+    z-index: -10;
+}
+
+@keyframes sparkleFade {
+    0%   { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+  
+  
 
 
+/* 
+.blink {
+    animation: blinkText 1s infinite;
+  }
+  
+  @keyframes blinkText {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+   */
 
 

@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anastasiia Kozlenko</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="helloType.js" defer></script>
+    <script src="blinkText.js" defer></script>
+    <script src="bounceArrow.js" defer></script>
+    <script src="scrollClick.js" defer></script>
+    <script src="rotateGirl.js" defer></script>
+    <script src="sparklings.js" defer></script>
+   
+    
 </head>
 <body>
     <header>
-        <h1 id="hello-vertical">HELLO</h1>
-        <span id="line"></span>
+        <h1 id="hello-vertical"></h1>
         <div id="banner-girl-components">
             <img src="img/girl.webp" class="girl">
             <img src="img/hands_back.webp" class="girl back" alt="">
@@ -18,9 +27,9 @@
             <img src="img/sparkling_pink.webp" class="sparklings" id="second"  alt="">
             <img src="img/sparkling_purple.webp" class="sparklings" alt="">
         </div>
-        <h2 id="future-employee">YOUR FUTURE EMPLOYEE IS JUST HERE <img src="img/arrow.webp"></h2>
+        <h2 id="future-employee"><span id="blinking-text">YOUR FUTURE EMPLOYEE IS JUST HERE</span><img src="img/arrow.webp" id="arrow"></h2>
     </header>
-    <main>
+    <main id="main">
         <div id="contact-exp-edu-hobbies-container">
             <section class="info-section" id="contact-section">
                 <img src="img/profile_photo.webp" alt="" id="profile-photo">
@@ -85,27 +94,27 @@
                     <h2 class="sections-headers">EDUCATION</h2>
                     <table>
                         <tr>
-                            <td><b>Haute École en Hainaut - Department of Science and Technology</b><br>
+                            <td class="education-info"><b>Haute École en Hainaut - Department of Science and Technology</b><br>
                             Mons, Belgium<br>
                             Bachelor's Degree in Computer Science - Networks & Development (15.92/20 average grade)
                             </td>
                             <td>2023 - 2026</td>
                         </tr>
                         <tr>
-                            <td><b>Academy of Engineering and Pedagogy</b><br>
+                            <td class="education-info"><b>Academy of Engineering and Pedagogy</b><br>
                                 Kharkiv, Ukraine<br>
                                 Consulting Psychology and Management Bachelor's Degree 1.5 years
                                 </td>
                             <td>2019 - 2021</td>
                         </tr>
                         <tr>	
-                            <td><b>General Education Institution</b><br>
+                            <td class="education-info"><b>General Education Institution</b><br>
                                 Kharkiv, Ukraine<br>
                                 School 42
                                 </td>
                             <td>2008 - 2019</td>
                         </tr>
-                        <tr><td><b>Certifications</b></td></tr>
+                        <tr><td class="education-info"><b>Certifications</b></td></tr>
                         <tr><td>CCNA Routing & Switching 2024, Postman API Fundamentals Student Expert 2025</td></tr>
                     </table>
                 </section>
