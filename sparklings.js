@@ -1,3 +1,18 @@
+/**
+ Initializes the sparkling effect on the header element.
+ Sparkles are generated based on mouse movement speed and appear randomly within the header.
+ 
+ Dependencies:
+ - jQuery library is required for DOM manipulation and event handling.
+  
+ Functions:
+ - `generateSparkle`: Creates and appends a sparkle image at a random position within the header.
+ - `sparkleLoop`: Controls the interval for generating sparkles based on mouse speed.
+  
+ Event Listeners:
+ - Tracks mouse movement to calculate speed using the `mousemove` event.
+
+ */
 $(function () {
     const $header = $("header");
     const sparkleImages = [
@@ -43,9 +58,9 @@ $(function () {
       setTimeout(() => sparkle.remove(), 2000);
     }
   
-    // Boucle adaptative selon la vitesse
+
     function sparkleLoop() {
-      const interval = Math.max(20, 500 - speed * 3000);
+      const interval = Math.max(50, 500 - speed * 3000);
       generateSparkle();
       setTimeout(sparkleLoop, interval);
     }

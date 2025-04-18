@@ -1,3 +1,7 @@
+/**
+ This script creates a bouncing animation effect for an HTML element with the ID "arrow".
+ Uses javascript only.
+ */
 const arrow = document.getElementById("arrow");
   let direction = 1;
   let bounceAmount = 10; // hauteur du rebond en pixels
