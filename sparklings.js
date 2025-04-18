@@ -38,25 +38,27 @@ $(function () {
       lastY = e.clientY;
       lastTime = now;
     });
-  
 
     function generateSparkle() {
       const sparkle = $("<img>")
         .attr("src", sparkleImages[Math.floor(Math.random() * sparkleImages.length)])
         .addClass("sparkling-generated");
-  
+    
       const width = $header.width();
       const height = $header.height();
-  
-      const x = Math.random() * width;
+    
+      const sparkleWidth = width * 0.03;
+    
+      const x = Math.random() * (width - sparkleWidth*2);
       const y = Math.random() * height;
-  
+    
       sparkle.css({ left: x, top: y });
-  
+    
       $header.append(sparkle);
-  
+    
       setTimeout(() => sparkle.remove(), 2000);
     }
+    
   
 
     function sparkleLoop() {
