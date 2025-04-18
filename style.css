@@ -3,8 +3,7 @@
     --mainFont: "Century Gothic";
     --pink: #ff4a6b;
     --purple: #382f93;
-  }
-
+}
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -19,15 +18,16 @@
 @font-face {
     font-family: Britanic;
     src: url(BRITANIC.TTF);
-  }
+}
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Century Gothic', sans-serif;
+    background-color: var(--purple);
 }
 header {
-    overflow:hidden;
+    overflow: hidden;
     margin: 0;
     display: flex;
     width: 100%;
@@ -36,6 +36,9 @@ header {
     align-items: flex-end;
     justify-content: center;
     font-family: var(--mainFont);
+    border-radius: 0 0 1rem 1rem;
+    padding-bottom: 1rem;
+    background-color: white;
 }
 #hello-vertical {
     font-family: var(--accentFont);
@@ -54,13 +57,14 @@ header {
     margin: 0 4rem 1rem 0;
     color: var(--pink);
     cursor: pointer;
+    align-items: flex-end;
 }
-#future-employee img{
-    position: absolute;
-    width: 3.5rem;
-    top: 85%;
-    right: 1.5rem;
-}
+#arrow{
+    transition: transform 0.3s ease;
+    width: 7%;
+    margin-bottom: 1%;
+    }
+
 #banner-girl-components {
     width: 50%;
 }
@@ -90,15 +94,21 @@ header {
     left: 40%;
     transform: translate(-50%, -50%);
 }
-.sparklings {
-    width: 3%;
-    position: absolute;
-    top: 70%;
-    left: 57%;
+
+.girl,
+.girl.back {
+  transition: transform 0.2s ease-out;
 }
-.sparklings#second {
-    top: 75%;
-    left: 59%;
+.sparkling-generated {
+    position: absolute;
+    width: 3%;
+    pointer-events: none;
+    animation: sparkleFade 2s forwards;
+    z-index: -10;
+}
+@keyframes sparkleFade {
+    0%   { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
 }
 
 main {
@@ -108,13 +118,13 @@ main {
     column-gap: 0.3rem;
     row-gap: 0.3rem;
     padding: 0.5%;
+    overflow-y: hidden;
 }
 .info-section{
     background-color: white;
     border-radius: 1rem;
     padding: 1.5%;
 }
-
 #contact-exp-edu-hobbies-container {
     display: flex;
     flex-direction: column;
@@ -154,16 +164,7 @@ main {
     object-fit: contain;
     border: solid 0.2rem var(--purple);
 }
-.contacts {
-    display: flex;
-    justify-content: flex-start;
-    align-items:center;
-    margin: 0;
-}
-.contacts figcaption a {
-    text-decoration: none;
-    color: black;
-}
+
 .place {
     display: flex;
     justify-content: flex-start;
@@ -193,6 +194,19 @@ main {
     width: 1rem;
     margin: 0 0.5rem;
 }
+.contacts {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 0;
+}
+.contacts figcaption a {
+    text-decoration: none;
+    color: black;
+}
+.contacts figcaption a:hover {
+    color: var(--pink);
+}
 #skills-lang-container {
     width: 30%;
     display: flex;
@@ -219,7 +233,6 @@ main {
     margin: 0;
     font-size: 1rem;
 }
-
 .experience-sections h3 span {
     font-family: var(--accentFont);
     font-size: 1.1rem;
@@ -241,41 +254,111 @@ main {
 #blinking-text {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
-  }
-#arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-.girl,
-.girl.back {
-  transition: transform 0.2s ease-out;
 }
 
-.sparkling-generated {
-    position: absolute;
-    width: 3%;
-    pointer-events: none;
-    animation: sparkleFade 2s forwards;
-    z-index: -10;
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 0.8rem;
+    }
+    #laptop {
+        top: 60%;
+    }
+    #web-page {
+        top: 67.5%;
+    }
+    #banner-girl-components {
+        width: 70%;
+    }
+    .girl {
+        width: 65%;
+        top: 45%;
+        left: 50%;
+    }
+    .girl.back {
+        top: 40%;
+        width: 55%;
+    }
+    #laptop {
+        width: 16%;
+        top: 60%;
+    }
+    #web-page  {
+        width: 12.5%;
+        top: 65%;
+    }
+    
+}
+@media screen and (max-width: 900px) {
+   main {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+   }
+   #contact-exp-edu-hobbies-container{
+        width: 80%;
+   }
+   .info-section {
+        width: 100% !important;
+   }
+   #edu-hobbies-container {
+        flex-direction: column;
+   }
+   #skills-lang-container {
+        width: 80%;
+   }
+
+
+    
+}
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 1rem;
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5% 5%;
+    }
+    #hello-vertical {
+        transform: none; 
+        writing-mode: horizontal-tb;
+        text-align: center;
+        
+    }
+    #future-employee {
+        font-size: 2.5rem;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        text-wrap: wrap;
+        text-align: center;
+    }
+    #arrow {
+        width: 10%;
+        margin-left: 35%;
+    }
+    
+    .girl {
+        width: 95%;
+        top: 45%;
+        left: 50%;
+    }
+    .girl.back {
+        top: 40%;
+        width: 90%;
+    }
+    #laptop {
+        width: 25%;
+        top: 62.5%;
+    }
+    #web-page  {
+        width: 20%;
+        top: 70%;
+    }
+
 }
 
-@keyframes sparkleFade {
-    0%   { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.5); }
-}
-  
-  
-
-
-/* 
-.blink {
-    animation: blinkText 1s infinite;
-  }
-  
-  @keyframes blinkText {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-   */
 
 
