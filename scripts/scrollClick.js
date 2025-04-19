@@ -7,8 +7,11 @@
  Dependencies:
  - jQuery
  */
-$("#future-employee").on("click", function () {
-    $("html, body").animate({
+ $(function () {
+    $("#future-employee").on("click", function () {
+      $("html, body").animate({
         scrollTop: $("#main").offset().top
-    }, 500);
-});
+      }, 500);
+    });
+  });
+  

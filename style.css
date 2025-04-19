@@ -17,7 +17,7 @@
 
 @font-face {
     font-family: Britanic;
-    src: url(BRITANIC.TTF);
+    src: url(ressources/fonts/BRITANIC.TTF);
 }
 
 body {
@@ -442,6 +442,10 @@ main {
     #hobbies-list li {
         padding: 2%;
     }
+    .info-section {
+        opacity: 1 !important;
+        transform: none !important;
+      }
 
 
 

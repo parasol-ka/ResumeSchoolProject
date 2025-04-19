@@ -17,8 +17,8 @@
 $(function () {
     const $header = $("header");
     const sparkleImages = [
-      "img/sparkling_pink.webp",
-      "img/sparkling_purple.webp"
+      "ressources/img/sparkling_pink.webp",
+      "ressources/img/sparkling_purple.webp"
     ];
   
     let lastX = 0, lastY = 0;
