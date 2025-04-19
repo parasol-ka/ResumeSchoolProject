@@ -37,7 +37,7 @@ header {
     justify-content: center;
     font-family: var(--mainFont);
     border-radius: 0 0 1rem 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1%;
     background-color: white;
 }
 #hello-vertical {
@@ -74,10 +74,11 @@ header {
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
 }
 .girl.back {
-    z-index: -1;
-    top: 35%;
+    z-index: 1;
+    top: 40%;
     width: 45%;
 }
 #laptop {
@@ -86,6 +87,7 @@ header {
     top: 65%;
     left: 49%;
     transform: translate(-50%, -50%);
+    z-index: 3;
 }
 #web-page  {
     position: absolute;
@@ -93,6 +95,7 @@ header {
     top: 75%;
     left: 40%;
     transform: translate(-50%, -50%);
+    z-index: 4;
 }
 
 .girl,
@@ -104,7 +107,7 @@ header {
     width: 3%;
     pointer-events: none;
     animation: sparkleFade 2s forwards;
-    z-index: -10;
+    z-index: 0;
 }
 @keyframes sparkleFade {
     0%   { opacity: 1; transform: scale(1); }
@@ -225,10 +228,16 @@ main {
     padding: 0;
 }
 .sections-lists li {
-    padding: 0.2rem;
+    padding: 1%;
     border: solid 0.1rem var(--pink);
     border-radius: 0.7rem;
+    transition: background-color 0.3s ease-in-out;
 }
+.sections-lists li:hover {
+    background-color: var(--pink);
+    transition: background-color 0.3s ease-in-out;
+  }
+  
 .experience-sections h3{
     margin: 0;
     font-size: 1rem;
@@ -239,7 +248,7 @@ main {
     letter-spacing: 0.1rem;
     color: white;
     background-color: var(--purple);
-    padding: 0.1rem 0.5rem;
+    padding: 0.2% 0.5%;
     border-radius: 1rem;
 }
 .skills-sections h3{
@@ -248,13 +257,25 @@ main {
     color: white;
     border-radius: 0.7rem;
     letter-spacing: 0.1rem;
-    padding: 0.1rem 0.5rem;
+    padding: 0.2% 0.5%;
     width: max-content;
 }
 #blinking-text {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
+.cursor-ring {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ff5ab9;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.05s linear;
+    z-index: 1000;
+    display: none;
+  }
+  
 
 @media screen and (max-width: 1200px) {
     html {
@@ -293,12 +314,14 @@ main {
         flex-direction: column;
         width: 100%;
         align-items: center;
+        padding: 1% 0 0 0;
    }
    #contact-exp-edu-hobbies-container{
         width: 80%;
    }
    .info-section {
-        width: 100% !important;
+        width: 90% !important;
+        padding: 5%;
    }
    #edu-hobbies-container {
         flex-direction: column;
@@ -306,11 +329,30 @@ main {
    #skills-lang-container {
         width: 80%;
    }
-
-
+    .experience-sections h3 {
+        display: flex;
+        flex-direction: column;
+    
+    }
+    .experience-sections h3 span {
+        padding: 1% 5%;
+    }
+    #contact-section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #contact-section h1, #contact-section h2 {
+        text-align: center;
+    }
+    .skills-sections h3{
+        width: 85%;
+        padding: 1% 5%;
+    }
     
 }
 @media screen and (max-width: 800px) {
+    
     html {
         font-size: 1rem;
     }
@@ -319,15 +361,17 @@ main {
         align-items: center;
         justify-content: space-between;
         padding: 5% 5%;
+        width: 90%;
     }
     #hello-vertical {
+        font-size: 5rem;
         transform: none; 
         writing-mode: horizontal-tb;
         text-align: center;
         
     }
     #future-employee {
-        font-size: 2.5rem;
+        font-size: 2rem;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
@@ -351,13 +395,36 @@ main {
     }
     #laptop {
         width: 25%;
-        top: 62.5%;
+        top: 60%;
     }
     #web-page  {
         width: 20%;
-        top: 70%;
+        top: 68%;
     }
 
+}
+@media screen and (max-width: 600px) {
+    header {
+        justify-content: space-between;
+    }
+    #hello-vertical {
+        font-size: 5rem;
+    }
+    #future-employee {
+        font-size: 1.5rem;
+    }
+    #laptop {
+        top: 58%;
+    }
+    #web-page  {
+        top: 65%;
+    }
+}
+@media screen and (max-width: 400px) {
+    
+    #hello-vertical {
+        font-size: 4rem;
+    }
 }
 
 

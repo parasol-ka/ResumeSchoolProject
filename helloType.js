@@ -1,17 +1,24 @@
 /**
- Initializes a Typed.js instance on the element with the ID "hello-vertical"
- once the DOM content is fully loaded. The text "HELLO" is typed with a 
- speed of 300ms per character, without looping.
- 
- Dependencies:
- - Typed.js library must be included in the project for this code to work.
- 
+ * Animates typing of the word "HELLO" vertically inside an HTML element with the ID "hello-vertical".
+ * Each letter is added one at a time with a delay of 400ms between each.
+ *
+ * Dependencies:
+ * - jQuery library is required for DOM manipulation and event handling.
+
  */
-document.addEventListener("DOMContentLoaded", function () {
-    new Typed("#hello-vertical", {
-      strings: ["HELLO"],
-      typeSpeed: 300,
-      loop: false,
-      showCursor: false      
-    });
-  });
+
+ $(function () {
+  const text = "HELLO";
+  const $target = $("#hello-vertical");
+  let index = 0;
+
+  function typeLetter() {
+    if (index < text.length) {
+      $target.text($target.text() + text.charAt(index));
+      index++;
+      setTimeout(typeLetter, 400);
+    }
+  }
+
+  typeLetter();
+ });

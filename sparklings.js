@@ -13,6 +13,7 @@
  - Tracks mouse movement to calculate speed using the `mousemove` event.
 
  */
+
 $(function () {
     const $header = $("header");
     const sparkleImages = [
