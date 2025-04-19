@@ -264,17 +264,7 @@ main {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
-.cursor-ring {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ff5ab9;
-    border-radius: 50%;
-    pointer-events: none;
-    transition: transform 0.05s linear;
-    z-index: 1000;
-    display: none;
-  }
+
   
 
 @media screen and (max-width: 1200px) {
@@ -426,6 +416,38 @@ main {
         font-size: 4rem;
     }
 }
+@media print {
+    header { display: none;}
+    html {
+        font-size: 0.75rem;
+    }
+    #profile-photo {
+        width: 100px;             
+        height: 100px;
+        border: none;
+    }
+    #contact-info h1{
+        font-size: 2rem;
+    }
+    #contact-info h1, #contact-info h2, .sections-headers, .experience-sections h3 span, .skills-sections h3 {
+        color: black;
+    }
+    .experience-sections h3 {
+        font-weight: 100;
+    }
+    .sections-lists li{
+        padding: 1%;
+        border: solid 0.1rem rgba(0, 0, 0, 0.2);
+    }
+    #hobbies-list li {
+        padding: 2%;
+    }
+
+
+
+}
+
+  
 
 
 
