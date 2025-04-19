@@ -3,6 +3,7 @@
  by changing its opacity between 1 (visible) and 0 (invisible) every 0.5 sec.
  
  This creates a blinking effect for the text.
+ Uses javascript only.
  */
 const text = document.getElementById("blinking-text");
   let visible = true;

@@ -257,15 +257,13 @@ main {
     color: white;
     border-radius: 0.7rem;
     letter-spacing: 0.1rem;
-    padding: 0.2% 0.5%;
+    padding: 0.3% 1%;
     width: max-content;
 }
 #blinking-text {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
-
-  
 
 @media screen and (max-width: 1200px) {
     html {
@@ -297,7 +295,6 @@ main {
         width: 12.5%;
         top: 65%;
     }
-    
 }
 @media screen and (max-width: 900px) {
    main {
@@ -339,7 +336,6 @@ main {
         width: 85%;
         padding: 1% 5%;
     }
-    
 }
 @media screen and (max-width: 800px) {
     
@@ -357,7 +353,7 @@ main {
         font-size: 5rem;
         transform: none; 
         writing-mode: horizontal-tb;
-        text-align: center;
+        text-align: end;
         
     }
     #future-employee {
@@ -391,7 +387,6 @@ main {
         width: 20%;
         top: 68%;
     }
-
 }
 @media screen and (max-width: 600px) {
     header {
@@ -411,7 +406,9 @@ main {
     }
 }
 @media screen and (max-width: 400px) {
-    
+    .contacts {
+        font-size: 0.9rem;
+    }
     #hello-vertical {
         font-size: 4rem;
     }
@@ -445,13 +442,5 @@ main {
     .info-section {
         opacity: 1 !important;
         transform: none !important;
-      }
-
-
-
+    }
 }
-
-  
-
-
-

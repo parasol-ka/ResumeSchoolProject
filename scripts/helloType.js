@@ -7,9 +7,10 @@
 
  */
 
- $(function () {
+$(function () {
   const text = "HELLO";
   const $target = $("#hello-vertical");
+  $target.text(""); // Clear the target element before typing
   let index = 0;
 
   function typeLetter() {
